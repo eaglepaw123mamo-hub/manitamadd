@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beni Seviyor Musun?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(120deg, #f6d365, #fda085);
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        #evet {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #hayir {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+        /* Hayır butonunu kaçırma efekti */
+        #hayir:hover {
+            left: calc(100px - 50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Beni Seviyor Musun?</h1>
+    <button id="evet">Evet ❤️</button>
+    <button id="hayir">Hayır 😢</button>
+
+    <script>
+        const evetBtn = document.getElementById('evet');
+        const hayirBtn = document.getElementById('hayir');
+
+        evetBtn.addEventListener('click', () => {
+            alert("Awww 😍 Sen de beni seviyorsun!");
+        });
+
+        hayirBtn.addEventListener('mouseover', () => {
+            // Hayır butonunu rastgele hareket ettir
+            const x = Math.random() * (window.innerWidth - hayirBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - hayirBtn.offsetHeight);
+            hayirBtn.style.position = 'absolute';
+            hayirBtn.style.left = x + 'px';
+            hayirBtn.style.top = y + 'px';
+        });
+    </script>
+</body>
+</html>
